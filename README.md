@@ -13,3 +13,5 @@ http://www.vogella.com/articles/AndroidBackgroundProcessing/article.html
 
 Official Tread examples: https://developer.android.com/training/multiple-threads/communicate-ui.html
 
+The best about Threads: http://indyvision.net/2010/01/android-threads-tutorial/
+
