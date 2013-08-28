@@ -15,3 +15,9 @@ Official Tread examples: https://developer.android.com/training/multiple-threads
 
 The best about Threads: http://indyvision.net/2010/01/android-threads-tutorial/
 
+WD
+====
+http://stackoverflow.com/questions/7740767/android-thread-exiting-with-uncaught-exception-group-0x4001d800
+
+http://stackoverflow.com/questions/6119048/android-development-thread-exiting-with-uncaught-exception?rq=1
+
