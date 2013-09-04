@@ -4,5 +4,6 @@
     <string name="app_name">Exp My Sms</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="err_cant_write_sdcard">Cannot wrtite SDcard!</string>
 
 </resources>

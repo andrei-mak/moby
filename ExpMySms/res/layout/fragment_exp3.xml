@@ -8,25 +8,31 @@
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="72dp"
-        android:layout_margin="@dimen/activity_vertical_margin"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/breadcrumb_1_xhdpi" />
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:src="@drawable/breadcrumb_3_xhdpi" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_fragment" >
+        android:layout_height="match_parent" >
 
         <Button
-            android:id="@+id/btnExportMySms"
+            android:id="@+id/btnExit"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/btn_main"
-            android:onClick="onClickExportMySms"
-            android:text="Next >"
+            android:onClick="onClickExit"
+            android:text="Exit"
             android:textColor="#fff" />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/textView2"
