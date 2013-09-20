@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Exp My Sms</string>
+    <string name="app_name">Expo My SMS</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="err_cant_write_sdcard">Cannot wrtite SDcard!</string>
+    <string name="title_activity_expo2">Expo2Activity</string>
 
 </resources>
