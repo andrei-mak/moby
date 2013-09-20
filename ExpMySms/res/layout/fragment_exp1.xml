@@ -1,41 +1,68 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:src="@drawable/breadcrumb_1_xhdpi" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_frame_white_shadow"
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_vertical_margin"
+                android:text="Sms inbox"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_frame_beige"
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_vertical_margin"
+                android:text="Sms outbox"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="72dp"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/breadcrumb_1_xhdpi" />
-
-    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_fragment" >
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/bg_frame_white" />
 
-        <Button
-            android:id="@+id/btnExportMySms"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/btn_main"
-            android:onClick="onClickExportMySms"
-            android:text="Next >"
-            android:textColor="#fff" />
+    <Button
+        android:id="@+id/btnExportMySms"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn_main"
+        android:onClick="onClickExportMySms"
+        android:text="Next >"
+        android:textColor="#fff" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_margin="@dimen/activity_vertical_margin"
-            android:text="This is test content. This is test content. This is test content. This is test content. "
-            android:textSize="16sp" />
-    </RelativeLayout>
-
-</LinearLayout>
+</RelativeLayout>
