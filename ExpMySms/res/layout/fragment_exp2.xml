@@ -5,77 +5,111 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <ScrollView
-        android:id="@+id/scrollView1"
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:src="@drawable/breadcrumb_2_xhdpi" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="72dp"
+        android:background="#aaa7a5" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="57dp"
+        android:layout_marginTop="73dp"
+        android:background="#ffffff" >
 
         <LinearLayout
             android:id="@+id/LinearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:src="@drawable/breadcrumb_2_xhdpi" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_fragment"
+                android:background="#fff"
+                android:paddingBottom="4dp"
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_vertical_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="Set filter"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:background="#0099CC" />
+
+            <TextView
+                android:id="@+id/textViewSettings1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:gravity="center_vertical"
                 android:padding="@dimen/activity_vertical_margin"
-                android:text="Choose export parameters"
+                android:text="Select one contact for export messages"
                 android:textSize="16sp" />
 
-            <CheckBox
-                android:id="@+id/checkBox1"
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_frame_white"
-                android:text="Inbox" />
+                android:layout_height="4dp"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:background="@drawable/divider_list" />
 
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_frame_white"
-                android:text="OutBox" />
+            <QuickContactBadge
+                android:id="@+id/quickContactBadge1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin" />
 
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_frame_beige"
-                android:text="CheckBox" />
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/btn_main"
+                android:onClick="onClickSelectContact"
+                android:text="Select Contact"
+                android:textColor="#fff" />
 
-            <CheckBox
-                android:id="@+id/checkBox4"
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_fragment"
-                android:text="CheckBox" />
+                android:layout_height="4dp"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:background="@drawable/divider_list" />
         </LinearLayout>
     </ScrollView>
 
-    <ImageView
-        android:id="@+id/imageView1"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="65dp"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/bg_fragment" />
+        android:background="#fff" />
 
     <Button
         android:id="@+id/btnExportStart"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_margin="5dp"
         android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/activity_vertical_margin"
         android:background="@drawable/btn_main"
         android:onClick="onClickExportStart"
         android:text="Start Export"
