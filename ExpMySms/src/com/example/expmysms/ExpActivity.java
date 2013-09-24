@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,6 +19,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -29,9 +32,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ExpActivity extends FragmentActivity {
+	
+	final private static int PICK_CONTACT = 1;
 
 	/* viewPager */
 	private static final int NUM_PAGES = 3;
@@ -154,7 +160,8 @@ public class ExpActivity extends FragmentActivity {
 
 		mPager.setCurrentItem(mPager.getCurrentItem() - 1, true);
 	}
-
+	
+	
 	/**
 	 * Button listener - Step 2 - Start Export
 	 */
@@ -178,6 +185,14 @@ public class ExpActivity extends FragmentActivity {
 		 * Runnable() {// This thread runs in the UI public void run() {
 		 * mProgressBar.setVisibility(1); } }); } }).start();
 		 */
+	}
+	
+	/**
+	 * Button listener - Select contact for filter 
+	 */
+	public void onClickSelectContact(View v) {
+		Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+        startActivityForResult(intent, PICK_CONTACT);
 	}
 
 	/**
@@ -341,5 +356,30 @@ public class ExpActivity extends FragmentActivity {
 					R.string.err_cant_write_sdcard, Toast.LENGTH_SHORT).show();
 		}
 	}
+	
+	/**
+	 * For Select Contact
+	 */
+	@Override
+	public void onActivityResult(int reqCode, int resultCode, Intent data) {
+		  super.onActivityResult(reqCode, resultCode, data);
+
+		  switch (reqCode) {
+		    case (PICK_CONTACT) :
+		      if (resultCode == Activity.RESULT_OK) {
+		        Uri contactData = data.getData();
+		        Cursor c =  getContentResolver().query(contactData, null, null, null, null);
+		        if (c.moveToFirst()) {
+		          String name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+		          // TODO Whatever you want to do with the selected contact name.
+		          Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG).show();
+		          
+		          TextView mTextViewRS2 = (TextView)findViewById(R.id.textViewReviewSettings2);
+		          mTextViewRS2.setText("For contact: " + name);
+		        }
+		      }
+		      break;
+		  }
+		}
 
 }
