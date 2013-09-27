@@ -6,26 +6,22 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +31,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ExpActivity extends FragmentActivity {
+public class ExpActivity extends ActionBarActivity {
 	
 	final private static int PICK_CONTACT = 1;
 
@@ -77,6 +73,7 @@ public class ExpActivity extends FragmentActivity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_exp);
+		
 		
 		/* Set BG image */
 		ImageView mImageView = (ImageView) findViewById(R.id.bgImageMain);
@@ -154,11 +151,8 @@ public class ExpActivity extends FragmentActivity {
 	/**
 	 * Button listener - Step 3
 	 */
-	public void onClickExit(View v) {
-		// Go to next fragment
-		mPager.setCurrentItem(mPager.getCurrentItem() - 1, true);
-
-		mPager.setCurrentItem(mPager.getCurrentItem() - 1, true);
+	public void onClickStart(View v) {
+		startActivity(new Intent(this,WorkActivity.class));
 	}
 	
 	
@@ -193,6 +187,15 @@ public class ExpActivity extends FragmentActivity {
 	public void onClickSelectContact(View v) {
 		Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
         startActivityForResult(intent, PICK_CONTACT);
+	}
+	
+	/**
+	 * Button listener - Skip to Review screen
+	 */
+	public void onClickSkip (View v) {
+		// Go to last fragment
+		mPager.setCurrentItem(mPager.getCurrentItem() + 1, true);
+		mPager.setCurrentItem(mPager.getCurrentItem() + 1, true);
 	}
 
 	/**
