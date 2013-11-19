@@ -5,6 +5,7 @@ the test repo
 ArrayAdapter example:
 
 - http://stackoverflow.com/questions/17775077/the-constructor-arrayadapterarraylisthashmapstring-stringcontext-int-a
+- http://stackoverflow.com/questions/14155246/populate-a-listview-from-an-arraylisthashmapstring-string
 
 ====
 
